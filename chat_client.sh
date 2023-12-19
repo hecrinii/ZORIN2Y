@@ -27,14 +27,14 @@ do
 		oldusr=$usr
 		echo -ne "${cred}new username: $cdef"
 		read usr
-		echo "[$(date +%r)] new username: $oldusr -> $usr" | nc -N 0.0.0.1 4444
+		echo "[$(date +%r)] new username: $oldusr -> $usr" | nc -u -N 0.0.0.1 4444
 	fi
 
 	if [[ $i == "send" ]]
 	then
 		echo -ne "${cgreen}message: $cdef"
 		read mex
-		echo "[$(date +%r)] $usr: $mex" | nc -N 127.0.0.1 4444
+		echo "[$(date +%r)] $usr: $mex" | nc -u -N 0.0.0.1 4444
 	fi
 
 	if [[ $i == "exit" ]]
