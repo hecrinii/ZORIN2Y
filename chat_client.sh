@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cdef='\e[0m' #color default
-cred='\e[0;31m' #color green
+cred='\e[0;31m' #color red
 cgreen='\e[0;32m' #color green
 usr=$(whoami)
 chatlog='chat.log'
@@ -27,7 +27,7 @@ do
 		oldusr=$usr
 		echo -ne "${cred}new username: $cdef"
 		read usr
-		echo "[$(date +%r)] new username: $oldusr -> $usr" | nc -N 127.0.0.1 4444
+		echo "[$(date +%r)] new username: $oldusr -> $usr" | nc -N 0.0.0.1 4444
 	fi
 
 	if [[ $i == "send" ]]
