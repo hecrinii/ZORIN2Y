@@ -7,7 +7,7 @@ chatlog='chat.log'
 
 while [[ true ]]
 do
-	nc -l -b 4444 | tee -a $chatlog
+	nc -l -b -u 4444 | tee -a $chatlog
 	#equivalent to:
 	# nc -l 4444 >> $chatlog
 done
